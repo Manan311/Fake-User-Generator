@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Assignment2.Page.AddServiceUser"
+    Title="Generate User">
+
+        <StackLayout
+            Margin="20">
+            <Label Text="Service Name"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            <Entry Placeholder="Cleaners..."
+                   x:Name="serviceName"/>
+
+            <Label Text="Generate data for..."
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="10, 0, 0, 0"/>
+
+            <Grid ColumnSpacing="10"
+                  RowSpacing="10"
+                  HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="0"
+                             Grid.Column="0">
+                    <CheckBox IsChecked="{Binding Gender}"/>
+                    <Label Text="Gender"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="0"
+                             Grid.Column="1">
+                    <CheckBox IsChecked="{Binding Name}"/>
+                    <Label Text="Name"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="1"
+                             Grid.Column="0">
+                    <CheckBox IsChecked="{Binding Email}"/>
+                    <Label Text="Email"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="1"
+                             Grid.Column="1">
+                    <CheckBox IsChecked="{Binding Username}"/>
+                    <Label Text="Username"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="2"
+                             Grid.Column="0">
+                    <CheckBox IsChecked="{Binding Password}"/>
+                    <Label Text="Password"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="2"
+                             Grid.Column="1">
+                    <CheckBox IsChecked="{Binding Dob}"/>
+                    <Label Text="Date of Birth"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="3"
+                             Grid.Column="0">
+                    <CheckBox IsChecked="{Binding Phone}"/>
+                    <Label Text="Phone"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="3"
+                             Grid.Column="1">
+                    <CheckBox IsChecked="{Binding Cell}"/>
+                    <Label Text="Cell"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="4"
+                             Grid.Column="0">
+                    <CheckBox IsChecked="{Binding Picture}"/>
+                    <Label Text="Image"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="4"
+                             Grid.Column="1">
+                    <CheckBox IsChecked="{Binding Address}"/>
+                    <Label Text="Address"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Medium"/>
+                </StackLayout>
+            
+            </Grid>
+
+            <Button Text="Generate"
+                    TextColor="#344955"
+                    BackgroundColor="#F9AA33"
+                    CornerRadius="100"
+                    Margin="20"
+                    Clicked="Handle_Generate"/>
+        </StackLayout>
+</ContentPage>

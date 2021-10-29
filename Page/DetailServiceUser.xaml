@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Assignment2.Converter"
+    x:Class="Assignment2.Page.DetailServiceUser"
+    Title="{Binding ServiceName}">
+
+    <ContentPage.Resources>
+        <local:LinkToStringConverter x:Key="lnkstringConverter" />
+        <local:NullToBoolConverter x:Key="nullboolConverter" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout
+            Margin="20">
+
+            <StackLayout HorizontalOptions="Center">
+                <Frame CornerRadius="100"
+                       Padding="0"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       HorizontalOptions="Center">
+                    <Image Source="{Binding Picture,
+                        Converter={StaticResource lnkstringConverter}}"
+                           Aspect="AspectFill"/>
+                </Frame>
+                <Button Text="Open in browser"
+                        CornerRadius="10"
+                        Margin="2,5"
+                        BackgroundColor="#F9AA33"
+                        TextColor="#344955"
+                        Clicked="Handle_Broswer"
+                        CommandParameter="{Binding Picture}"/>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Gender,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Gender"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Gender}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Gender}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Name,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Name"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Name}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Name}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Email,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Email"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Email}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Email}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Phone,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Phone"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Phone}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Phone}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Cell,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Cell"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Cell}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Cell}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Username,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Username"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Username}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Username}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Password,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Password"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Password}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Password}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Dob,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Date of Birth"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Dob, StringFormat='{0:MMMM dd, yyyy}'}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Dob, StringFormat='{0:MMMM dd, yyyy}'}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="{Binding Address,
+                    Converter={StaticResource nullboolConverter}}">
+                <Label Text="Address"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="2,5"
+                           HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Address}"
+                               FontSize="Medium"/>
+                    </Frame>
+                    <Button Text="Copy"
+                            CornerRadius="10"
+                            Margin="2,5"
+                            BackgroundColor="#F9AA33"
+                            TextColor="#344955"
+                            Clicked="Handle_Copy"
+                            CommandParameter="{Binding Address}"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Delete"
+                    TextColor="#344955"
+                    BackgroundColor="#F9AA33"
+                    CornerRadius="100"
+                    Margin="20"
+                    Clicked="Handle_Delete"/>
+
+        </StackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

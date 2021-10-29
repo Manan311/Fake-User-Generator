@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Assignment2.Converter"
+             x:Class="Assignment2.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <local:LinkToStringConverter x:Key="lnkstringConverter" />
+        <local:NullToBoolConverter x:Key="nullboolConverter" />
+        <local:InverseBoolConverter x:Key="invboolConverter" />
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <!--2196F3-->
+        <Frame Padding="16" CornerRadius="0" BackgroundColor="#344955">
+            <Label Text="Fake User Generator" HorizontalTextAlignment="Center" TextColor="White" FontSize="Title"/>
+        </Frame>
+        <ListView x:Name="userList"
+                  ItemSelected="Handle_Detail"
+                  Margin="20"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  IsVisible="{Binding ServiceUserEmpty,
+            Converter={StaticResource invboolConverter}}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="10"
+                               CornerRadius="7"
+                               HasShadow="False"
+                               BackgroundColor="White"
+                               BorderColor="#344955"
+                               Margin="0,5,0,5"
+                               HeightRequest="80">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame CornerRadius="100"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="Start"
+                                        Padding="0">
+                                    <Image Source="{Binding Picture,
+                                        Converter={StaticResource lnkstringConverter}}"
+                                           Aspect="AspectFit"
+                                           HeightRequest="70"
+                                           WidthRequest="70"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="CenterAndExpand"/>
+                                </Frame>
+                                <StackLayout VerticalOptions="CenterAndExpand"
+                                             Padding="20,0,0,0">
+                                    <Label Text="{Binding ServiceName}"
+                                           FontSize="Medium"
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding Username}"
+                                           FontSize="Medium"
+                                           IsVisible="{Binding Username,
+                                        Converter={StaticResource nullboolConverter}}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="No users exist, click add to generate users."
+               HorizontalOptions="Center"
+               Padding="20"
+               IsVisible="{Binding ServiceUserEmpty}"/>
+
+        <Button Text="Add"
+                BackgroundColor="#F9AA33"
+                TextColor="#344955"
+                CornerRadius="100"
+                Clicked="Handle_Add"
+                Margin="20"
+                VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+
+
+</ContentPage>
